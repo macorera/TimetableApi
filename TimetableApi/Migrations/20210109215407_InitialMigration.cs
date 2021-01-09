@@ -118,22 +118,22 @@ namespace TimetableApi.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 9, "Jean Mueller" },
-                    { 14, "Isidro Moen DDS" },
-                    { 13, "Ms. Mable Sporer" },
-                    { 12, "Noe Gulgowski" },
-                    { 11, "Verlie Kris" },
-                    { 10, "Connie Blick" },
-                    { 8, "Miss Nico Pouros" },
-                    { 3, "Mandy Bednar" },
-                    { 6, "Mallie Bradtke" },
-                    { 5, "Mr. Conor Harris" },
-                    { 4, "Cornell Williamson" },
-                    { 15, "Ms. Cydney Gleichner" },
-                    { 2, "Scotty Jast I" },
-                    { 1, "Jerrod Kilback" },
-                    { 7, "Alberto Gerhold" },
-                    { 16, "Millie Crooks DDS" }
+                    { 9, "Enoch Kuhn" },
+                    { 14, "Idell Haag" },
+                    { 13, "Jacey Kovacek" },
+                    { 12, "Blair Goodwin" },
+                    { 11, "Mariam Lockman" },
+                    { 10, "Aidan Harber" },
+                    { 8, "Caleigh Shanahan" },
+                    { 3, "Zoe D'Amore Jr." },
+                    { 6, "Elissa McLaughlin" },
+                    { 5, "Dr. Mabel Murazik" },
+                    { 4, "Ima Fadel" },
+                    { 15, "Curt Renner" },
+                    { 2, "Johathan Muller" },
+                    { 1, "Andrew Morissette V" },
+                    { 7, "Wilfrid Cartwright" },
+                    { 16, "Cale Hansen" }
                 });
 
             migrationBuilder.InsertData(
@@ -141,21 +141,44 @@ namespace TimetableApi.Migrations
                 columns: new[] { "Id", "GradeId", "Name" },
                 values: new object[,]
                 {
-                    { 1, 1, "Adriana Grimes" },
-                    { 2, 1, "Nolan Kuhlman" },
-                    { 3, 1, "Tessie Corkery" },
-                    { 4, 1, "Kianna O'Conner" },
-                    { 5, 1, "Mrs. Richard Lindgren" },
-                    { 6, 1, "Jayson O'Conner" },
-                    { 7, 1, "Kiana Zulauf" },
-                    { 8, 1, "Jesus Kuhn" },
-                    { 9, 1, "Julia Adams Jr." },
-                    { 10, 1, "Miller Kassulke" },
-                    { 11, 1, "Lewis Corkery II" },
-                    { 12, 1, "Yasmeen Reichert" },
-                    { 13, 1, "Neva Bode IV" },
-                    { 14, 1, "Adolf Buckridge" },
-                    { 15, 1, "Ruthe Prohaska" }
+                    { 1, 1, "Alize Schamberger" },
+                    { 15, 1, "Walter Goodwin" },
+                    { 14, 1, "Ms. Angela Wiza" },
+                    { 13, 1, "Stephanie Rowe" },
+                    { 12, 1, "Linwood Abbott" },
+                    { 10, 1, "Antonietta Rath" },
+                    { 9, 1, "Samara Feil" },
+                    { 11, 1, "Miss Ayden Williamson" },
+                    { 7, 1, "Pattie Harber DVM" },
+                    { 6, 1, "Aglae Greenholt" },
+                    { 5, 1, "Heaven Abbott" },
+                    { 4, 1, "Ansel Gulgowski" },
+                    { 3, 1, "Reva Powlowski" },
+                    { 2, 1, "Melany Greenholt" },
+                    { 8, 1, "Margie Abbott" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "TeachersSubjects",
+                columns: new[] { "SubjectId", "TeacherId" },
+                values: new object[,]
+                {
+                    { 5, 9 },
+                    { 7, 14 },
+                    { 7, 13 },
+                    { 6, 12 },
+                    { 6, 11 },
+                    { 5, 10 },
+                    { 4, 8 },
+                    { 1, 1 },
+                    { 3, 6 },
+                    { 3, 5 },
+                    { 2, 4 },
+                    { 2, 3 },
+                    { 1, 2 },
+                    { 8, 15 },
+                    { 4, 7 },
+                    { 8, 16 }
                 });
 
             migrationBuilder.CreateIndex(

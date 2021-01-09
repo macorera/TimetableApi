@@ -71,91 +71,91 @@ namespace TimetableApi.Migrations
                         {
                             Id = 1,
                             GradeId = 1,
-                            Name = "Adriana Grimes"
+                            Name = "Alize Schamberger"
                         },
                         new
                         {
                             Id = 2,
                             GradeId = 1,
-                            Name = "Nolan Kuhlman"
+                            Name = "Melany Greenholt"
                         },
                         new
                         {
                             Id = 3,
                             GradeId = 1,
-                            Name = "Tessie Corkery"
+                            Name = "Reva Powlowski"
                         },
                         new
                         {
                             Id = 4,
                             GradeId = 1,
-                            Name = "Kianna O'Conner"
+                            Name = "Ansel Gulgowski"
                         },
                         new
                         {
                             Id = 5,
                             GradeId = 1,
-                            Name = "Mrs. Richard Lindgren"
+                            Name = "Heaven Abbott"
                         },
                         new
                         {
                             Id = 6,
                             GradeId = 1,
-                            Name = "Jayson O'Conner"
+                            Name = "Aglae Greenholt"
                         },
                         new
                         {
                             Id = 7,
                             GradeId = 1,
-                            Name = "Kiana Zulauf"
+                            Name = "Pattie Harber DVM"
                         },
                         new
                         {
                             Id = 8,
                             GradeId = 1,
-                            Name = "Jesus Kuhn"
+                            Name = "Margie Abbott"
                         },
                         new
                         {
                             Id = 9,
                             GradeId = 1,
-                            Name = "Julia Adams Jr."
+                            Name = "Samara Feil"
                         },
                         new
                         {
                             Id = 10,
                             GradeId = 1,
-                            Name = "Miller Kassulke"
+                            Name = "Antonietta Rath"
                         },
                         new
                         {
                             Id = 11,
                             GradeId = 1,
-                            Name = "Lewis Corkery II"
+                            Name = "Miss Ayden Williamson"
                         },
                         new
                         {
                             Id = 12,
                             GradeId = 1,
-                            Name = "Yasmeen Reichert"
+                            Name = "Linwood Abbott"
                         },
                         new
                         {
                             Id = 13,
                             GradeId = 1,
-                            Name = "Neva Bode IV"
+                            Name = "Stephanie Rowe"
                         },
                         new
                         {
                             Id = 14,
                             GradeId = 1,
-                            Name = "Adolf Buckridge"
+                            Name = "Ms. Angela Wiza"
                         },
                         new
                         {
                             Id = 15,
                             GradeId = 1,
-                            Name = "Ruthe Prohaska"
+                            Name = "Walter Goodwin"
                         });
                 });
 
@@ -236,82 +236,82 @@ namespace TimetableApi.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Jerrod Kilback"
+                            Name = "Andrew Morissette V"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Scotty Jast I"
+                            Name = "Johathan Muller"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Mandy Bednar"
+                            Name = "Zoe D'Amore Jr."
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Cornell Williamson"
+                            Name = "Ima Fadel"
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Mr. Conor Harris"
+                            Name = "Dr. Mabel Murazik"
                         },
                         new
                         {
                             Id = 6,
-                            Name = "Mallie Bradtke"
+                            Name = "Elissa McLaughlin"
                         },
                         new
                         {
                             Id = 7,
-                            Name = "Alberto Gerhold"
+                            Name = "Wilfrid Cartwright"
                         },
                         new
                         {
                             Id = 8,
-                            Name = "Miss Nico Pouros"
+                            Name = "Caleigh Shanahan"
                         },
                         new
                         {
                             Id = 9,
-                            Name = "Jean Mueller"
+                            Name = "Enoch Kuhn"
                         },
                         new
                         {
                             Id = 10,
-                            Name = "Connie Blick"
+                            Name = "Aidan Harber"
                         },
                         new
                         {
                             Id = 11,
-                            Name = "Verlie Kris"
+                            Name = "Mariam Lockman"
                         },
                         new
                         {
                             Id = 12,
-                            Name = "Noe Gulgowski"
+                            Name = "Blair Goodwin"
                         },
                         new
                         {
                             Id = 13,
-                            Name = "Ms. Mable Sporer"
+                            Name = "Jacey Kovacek"
                         },
                         new
                         {
                             Id = 14,
-                            Name = "Isidro Moen DDS"
+                            Name = "Idell Haag"
                         },
                         new
                         {
                             Id = 15,
-                            Name = "Ms. Cydney Gleichner"
+                            Name = "Curt Renner"
                         },
                         new
                         {
                             Id = 16,
-                            Name = "Millie Crooks DDS"
+                            Name = "Cale Hansen"
                         });
                 });
 
@@ -328,6 +328,88 @@ namespace TimetableApi.Migrations
                     b.HasIndex("TeacherId");
 
                     b.ToTable("TeachersSubjects");
+
+                    b.HasData(
+                        new
+                        {
+                            SubjectId = 1,
+                            TeacherId = 1
+                        },
+                        new
+                        {
+                            SubjectId = 1,
+                            TeacherId = 2
+                        },
+                        new
+                        {
+                            SubjectId = 2,
+                            TeacherId = 3
+                        },
+                        new
+                        {
+                            SubjectId = 2,
+                            TeacherId = 4
+                        },
+                        new
+                        {
+                            SubjectId = 3,
+                            TeacherId = 5
+                        },
+                        new
+                        {
+                            SubjectId = 3,
+                            TeacherId = 6
+                        },
+                        new
+                        {
+                            SubjectId = 4,
+                            TeacherId = 7
+                        },
+                        new
+                        {
+                            SubjectId = 4,
+                            TeacherId = 8
+                        },
+                        new
+                        {
+                            SubjectId = 5,
+                            TeacherId = 9
+                        },
+                        new
+                        {
+                            SubjectId = 5,
+                            TeacherId = 10
+                        },
+                        new
+                        {
+                            SubjectId = 6,
+                            TeacherId = 11
+                        },
+                        new
+                        {
+                            SubjectId = 6,
+                            TeacherId = 12
+                        },
+                        new
+                        {
+                            SubjectId = 7,
+                            TeacherId = 13
+                        },
+                        new
+                        {
+                            SubjectId = 7,
+                            TeacherId = 14
+                        },
+                        new
+                        {
+                            SubjectId = 8,
+                            TeacherId = 15
+                        },
+                        new
+                        {
+                            SubjectId = 8,
+                            TeacherId = 16
+                        });
                 });
 
             modelBuilder.Entity("TimetableApi.Models.Student", b =>

@@ -108,9 +108,90 @@ namespace TimetableApi.Data
                     Id = 8,
                     Title = "World Literature",
                 }
-
-
             );
+
+            modelBuilder.Entity<TeachersSubjects>().HasData(
+                new TeachersSubjects
+                {
+                    TeacherId = 1,
+                    SubjectId = 1
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 2,
+                    SubjectId = 1
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 3,
+                    SubjectId = 2
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 4,
+                    SubjectId = 2
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 5,
+                    SubjectId = 3
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 6,
+                    SubjectId = 3
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 7,
+                    SubjectId = 4
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 8,
+                    SubjectId = 4
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 9,
+                    SubjectId = 5
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 10,
+                    SubjectId = 5
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 11,
+                    SubjectId = 6
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 12,
+                    SubjectId = 6
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 13,
+                    SubjectId = 7
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 14,
+                    SubjectId = 7
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 15,
+                    SubjectId = 8
+                },
+                new TeachersSubjects
+                {
+                    TeacherId = 16,
+                    SubjectId = 8
+                }
+                );
         }
     }
 }

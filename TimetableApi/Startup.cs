@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 using TimetableApi.Data;
 
 namespace TimetableApi
@@ -29,7 +30,11 @@ namespace TimetableApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<TimetableContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("TimetableConnection")));
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s => {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            s.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
+            }); ;
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<ITimetableRepo, SqlTimetableRepo>();
         }

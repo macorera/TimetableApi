@@ -14,6 +14,8 @@ namespace TimetableApi.Profiles
         {
             CreateMap<Student, StudentReadDto>();
             CreateMap<Grade, GradeReadDto>();
+            CreateMap<Subject, SubjectReadDto>();
+            CreateMap<Teacher, TeacherReadDto>();
         }
     }
 }

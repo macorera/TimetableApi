@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace TimetableApi.Data
 
         public IEnumerable<Subject> GetAllSubjects()
         {
-            throw new NotImplementedException();
+            return _context.Subjects.Include(subject => subject.Teachers).ToArray();
         }
 
         public IEnumerable<Teacher> GetAllTeachers()
@@ -47,7 +48,7 @@ namespace TimetableApi.Data
 
         public Subject GetSubjectById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Subjects.Include(subject => subject.Teachers).FirstOrDefault(p => p.Id == id);
         }
 
         public Teacher GetTeacherById(int id)
