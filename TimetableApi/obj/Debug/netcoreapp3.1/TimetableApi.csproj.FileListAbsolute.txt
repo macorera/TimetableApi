@@ -66,5 +66,10 @@ C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\Aut
 C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\User\source\repos\TimetableApi\TimetableApi\obj\Debug\netcoreapp3.1\TimetableApi.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\TimetableApi\TimetableApi\obj\Debug\netcoreapp3.1\TimetableApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\User\source\repos\TimetableApi\TimetableApi\obj\Debug\netcoreapp3.1\TimetableApi.MvcApplicationPartsAssemblyInfo.cache
