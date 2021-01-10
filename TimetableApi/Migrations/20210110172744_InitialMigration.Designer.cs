@@ -6,11 +6,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TimetableApi.Data;
+using TimetableApi.Data.Context;
 
 namespace TimetableApi.Migrations
 {
     [DbContext(typeof(TimetableContext))]
-    [Migration("20210110094743_InitialMigration")]
+    [Migration("20210110172744_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -165,31 +166,31 @@ namespace TimetableApi.Migrations
                         {
                             Id = 1,
                             GradeId = 1,
-                            Name = "Ned VonRueden"
+                            Name = "Braeden Monahan"
                         },
                         new
                         {
                             Id = 2,
                             GradeId = 1,
-                            Name = "Jillian Dooley"
+                            Name = "Yasmeen Beer"
                         },
                         new
                         {
                             Id = 3,
                             GradeId = 1,
-                            Name = "Demarcus Kulas"
+                            Name = "Jailyn Koss"
                         },
                         new
                         {
                             Id = 4,
                             GradeId = 1,
-                            Name = "Verla Runolfsdottir"
+                            Name = "Mary Beahan"
                         },
                         new
                         {
                             Id = 5,
                             GradeId = 1,
-                            Name = "August Jewess"
+                            Name = "Mr. Dillan Lubowitz"
                         });
                 });
 
@@ -270,82 +271,82 @@ namespace TimetableApi.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Clemens Yost II"
+                            Name = "Sarah Collins"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Pasquale Toy"
+                            Name = "Brandi Zulauf"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Mr. Myah Dickinson"
+                            Name = "Alexandrine Daniel"
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Anthony Sipes"
+                            Name = "Dr. Diego Toy"
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Kraig Kshlerin"
+                            Name = "Gabriel Blick"
                         },
                         new
                         {
                             Id = 6,
-                            Name = "Ronaldo Cruickshank"
+                            Name = "Sydney Rolfson"
                         },
                         new
                         {
                             Id = 7,
-                            Name = "Jessica Shields"
+                            Name = "Billy Quitzon"
                         },
                         new
                         {
                             Id = 8,
-                            Name = "Ms. Maiya Kunde"
+                            Name = "Alva Johns"
                         },
                         new
                         {
                             Id = 9,
-                            Name = "Danial Turner"
+                            Name = "Gustave Hayes"
                         },
                         new
                         {
                             Id = 10,
-                            Name = "Dr. Clark Gulgowski"
+                            Name = "Kurtis Schimmel"
                         },
                         new
                         {
                             Id = 11,
-                            Name = "Elinor Kovacek"
+                            Name = "Jared Rosenbaum"
                         },
                         new
                         {
                             Id = 12,
-                            Name = "Destin Kunze"
+                            Name = "Wallace Torp"
                         },
                         new
                         {
                             Id = 13,
-                            Name = "Clifton Wehner"
+                            Name = "Litzy Funk"
                         },
                         new
                         {
                             Id = 14,
-                            Name = "Richmond Muller"
+                            Name = "Adeline O'Hara DDS"
                         },
                         new
                         {
                             Id = 15,
-                            Name = "Jimmie Carroll V"
+                            Name = "Mauricio Schimmel"
                         },
                         new
                         {
                             Id = 16,
-                            Name = "Tyler Kessler"
+                            Name = "Nicolas Jenkins MD"
                         });
                 });
 
@@ -494,7 +495,13 @@ namespace TimetableApi.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("GradeId");
+
                     b.HasIndex("LeaveId");
+
+                    b.HasIndex("SubjectId");
+
+                    b.HasIndex("TeacherId");
 
                     b.ToTable("Timetables");
 
@@ -912,16 +919,45 @@ namespace TimetableApi.Migrations
 
             modelBuilder.Entity("TimetableApi.Models.Timetable", b =>
                 {
+                    b.HasOne("TimetableApi.Models.Grade", "Grade")
+                        .WithMany("Timetables")
+                        .HasForeignKey("GradeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("TimetableApi.Models.Leave", "Leave")
                         .WithMany()
                         .HasForeignKey("LeaveId");
 
+                    b.HasOne("TimetableApi.Models.Subject", "Subject")
+                        .WithMany()
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TimetableApi.Models.Teacher", null)
+                        .WithMany("Timetables")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Grade");
+
                     b.Navigation("Leave");
+
+                    b.Navigation("Subject");
                 });
 
             modelBuilder.Entity("TimetableApi.Models.Grade", b =>
                 {
                     b.Navigation("Students");
+
+                    b.Navigation("Timetables");
+                });
+
+            modelBuilder.Entity("TimetableApi.Models.Teacher", b =>
+                {
+                    b.Navigation("Timetables");
                 });
 #pragma warning restore 612, 618
         }

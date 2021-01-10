@@ -16,6 +16,11 @@ namespace TimetableApi.Profiles
             CreateMap<Grade, GradeReadDto>();
             CreateMap<Subject, SubjectReadDto>();
             CreateMap<Teacher, TeacherReadDto>();
+            CreateMap<Student, StudentTimetableReadDto>();
+            CreateMap<Teacher, TeacherTimetableReadDto>();
+            CreateMap<Timetable, TimetableReadDto>();
+            CreateMap<Leave, LeaveReadDto>();
+            CreateMap<LeaveCreateDto, Leave>();
         }
     }
 }

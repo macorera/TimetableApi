@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using TimetableApi.Data;
+using TimetableApi.Data.Context;
 
 namespace TimetableApi
 {

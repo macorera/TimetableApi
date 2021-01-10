@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TimetableApi.Data.Context;
 using TimetableApi.Models;
 
 namespace TimetableApi.Data
@@ -14,6 +15,15 @@ namespace TimetableApi.Data
         public SqlTimetableRepo(TimetableContext context)
         {
             _context = context;
+        }
+
+        public void CreateLeave(Leave leave)
+        {
+            if (leave == null)
+            {
+                throw new ArgumentNullException(nameof(leave));
+            }
+            _context.Leaves.Add(leave);
         }
 
         public IEnumerable<Grade> GetAllGrades()
@@ -41,9 +51,14 @@ namespace TimetableApi.Data
             return _context.Grades.Include(grades => grades.Students).AsSplitQuery().Include(grades => grades.Subjects).ThenInclude(teachers => teachers.Teachers ).FirstOrDefault(p => p.Id == id);
         }
 
+        public Leave GetLeaveById(int id)
+        {
+            return _context.Leaves.FirstOrDefault(p => p.Id == id);
+        }
+
         public Student GetStudentById(int id)
         {
-            return _context.Students.FirstOrDefault(p => p.Id == id);
+            return _context.Students.Include(grade => grade.Grade).ThenInclude(timetable => timetable.Timetables).FirstOrDefault(p => p.Id == id);
         }
 
         public Subject GetSubjectById(int id)
@@ -53,7 +68,7 @@ namespace TimetableApi.Data
 
         public Teacher GetTeacherById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Teachers.Include(timetable => timetable.Timetables).ThenInclude(grade => grade.Grade).AsSplitQuery().Include(subject => subject.Subjects).FirstOrDefault(p => p.Id == id);
         }
 
         public bool SaveChanges()

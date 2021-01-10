@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TimetableApi.Data;
+using TimetableApi.Data.Context;
 using TimetableApi.Dtos;
 using TimetableApi.Models;
 

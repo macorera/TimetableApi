@@ -13,12 +13,14 @@ namespace TimetableApi.Models
 
         [Required]
         public int GradeId { get; set; }
+        public virtual Grade Grade { set; get; }
 
         [Required]
         public int TeacherId { get; set; }
 
         [Required]
         public int SubjectId { get; set; }
+        public virtual Subject Subject { set; get; }
 
         [Required]
         public DateTime StartAt { get; set; }

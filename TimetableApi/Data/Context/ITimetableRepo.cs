@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TimetableApi.Models;
 
-namespace TimetableApi.Data
+namespace TimetableApi.Data.Context
 {
     public interface ITimetableRepo
     {
@@ -18,5 +18,7 @@ namespace TimetableApi.Data
         Student GetStudentById(int id);
         IEnumerable<Teacher> GetAllTeachers();
         Teacher GetTeacherById(int id);
+        void CreateLeave(Leave leave);
+        Leave GetLeaveById(int id);
     }
 }

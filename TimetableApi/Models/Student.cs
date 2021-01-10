@@ -16,9 +16,8 @@ namespace TimetableApi.Models
 
         [Required]
         public int GradeId { set; get; }
-        public Grade Grade { set; get; }
+        public virtual Grade Grade { set; get; }
 
-        public Grade Grade { set; get; }
-
+        //public virtual List<Timetable> Timetables { set; get; }
     }
 }

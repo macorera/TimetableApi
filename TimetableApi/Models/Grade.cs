@@ -14,8 +14,10 @@ namespace TimetableApi.Models
         [Required]
         public string Title { get; set; }
 
-        public List<Subject> Subjects { get; set; }
+        public virtual List<Subject> Subjects { get; set; }
 
-        public List<Student> Students { get; set; }
+        public virtual List<Student> Students { get; set; }
+
+        public virtual List<Timetable> Timetables { get; set; }
     }
 }

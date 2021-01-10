@@ -1,11 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TimetableApi.Models;
 
-namespace TimetableApi.Data
+namespace TimetableApi.Data.Context
 {
     public class TimetableContext : DbContext
     {

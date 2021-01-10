@@ -14,5 +14,7 @@ namespace TimetableApi.Models
         [Required]
         public string Name{ get; set; }
         public List<Subject> Subjects { get; set; }
+
+        public List<Timetable> Timetables { get; set; }
     }
 }

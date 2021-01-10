@@ -35,6 +35,16 @@ namespace TimetableApi.Data
                     }
                 );
 
+           
+
+            modelBuilder.Entity<Teacher>()
+            .HasMany(s => s.Timetables)
+            .WithOne()
+            .HasForeignKey(t => t.TeacherId)
+            .HasPrincipalKey(s => s.Id);
+
+
+
 
             modelBuilder.Entity<Grade>().HasData(
                     new Grade
@@ -46,7 +56,8 @@ namespace TimetableApi.Data
                     {
                         Id = 2,
                         Title = "Grade 6"
-                    });
+                    }
+             );
 
             Student[] students = new Student[5];
 
@@ -280,6 +291,13 @@ namespace TimetableApi.Data
             modelBuilder.Entity<Timetable>().HasData(
                 timetables
             );
+
+
+           // modelBuilder.Entity<Student>()
+           //.HasMany(s => s.Timetables)
+           //.WithOne()
+           //.HasForeignKey(t => t.GradeId)
+           //.HasPrincipalKey(s => s.GradeId);
 
 
         }
