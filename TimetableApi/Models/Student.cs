@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace TimetableApi.Models
 {
@@ -17,7 +13,5 @@ namespace TimetableApi.Models
         [Required]
         public int GradeId { set; get; }
         public virtual Grade Grade { set; get; }
-
-        //public virtual List<Timetable> Timetables { set; get; }
     }
 }
