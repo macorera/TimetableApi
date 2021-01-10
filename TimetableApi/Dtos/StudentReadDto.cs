@@ -11,6 +11,6 @@ namespace TimetableApi.Dtos
     {
         public string Name { set; get; }
 
-        public Grade Grade { set; get; }
+        public GradeReadDto Grade { set; get; }
     }
 }

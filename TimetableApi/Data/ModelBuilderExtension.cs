@@ -19,10 +19,23 @@ namespace TimetableApi.Data
                     ts => ts.HasOne(prop => prop.Teacher).WithMany().HasForeignKey(prop => prop.TeacherId),
                     ts => {
                         ts.HasKey(prop => new { prop.SubjectId, prop.TeacherId });
+                        ts.Property(prop => prop.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
                     }
                 );
-            
-            
+
+            modelBuilder.Entity<Grade>()
+                .HasMany(g => g.Subjects)
+                .WithMany(s => s.Grades)
+                .UsingEntity<GradesSubjects>(
+                    gs => gs.HasOne(prop => prop.Subject).WithMany().HasForeignKey(prop => prop.SubjectId),
+                    gs => gs.HasOne(prop => prop.Grade).WithMany().HasForeignKey(prop => prop.GradeId),
+                    gs => {
+                        gs.HasKey(prop => new { prop.SubjectId, prop.GradeId });
+                        gs.Property(prop => prop.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
+                    }
+                );
+
+
             modelBuilder.Entity<Grade>().HasData(
                     new Grade
                     {
@@ -35,9 +48,9 @@ namespace TimetableApi.Data
                         Title = "Grade 6"
                     });
 
-            Student[] students = new Student[15];
+            Student[] students = new Student[5];
 
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 5; i++)
             {
                 students[i] = new Student
                 {
@@ -192,6 +205,96 @@ namespace TimetableApi.Data
                     SubjectId = 8
                 }
                 );
+
+
+            modelBuilder.Entity<GradesSubjects>().HasData(
+                new GradesSubjects
+                {
+                    GradeId = 1,
+                    SubjectId = 1
+                },
+                new GradesSubjects
+                {
+                    GradeId = 1,
+                    SubjectId = 2
+                },
+                new GradesSubjects
+                {
+                    GradeId = 1,
+                    SubjectId = 3
+                },
+                new GradesSubjects
+                {
+                    GradeId = 1,
+                    SubjectId = 4
+                },
+                new GradesSubjects
+                {
+                    GradeId = 1,
+                    SubjectId = 5
+                },
+                new GradesSubjects
+                {
+                    GradeId = 1,
+                    SubjectId = 6
+                },
+                new GradesSubjects
+                {
+                    GradeId = 1,
+                    SubjectId = 7
+                },
+                new GradesSubjects
+                {
+                    GradeId = 1,
+                    SubjectId = 8
+                }
+                );
+
+            var dates = new List<DateTime>();
+            Timetable[] timetables = new Timetable[40];
+
+            int index = 0;
+            for (var dt = DateTime.Parse("2021-01-11 00:00:00"); dt <= DateTime.Parse("2021-01-15 00:00:00"); dt = dt.AddDays(1))
+            {
+                
+                DateTime rec = dt.ChangeTime(8,0,0,0);
+                for (int i = 0; i < 8; i++)
+                {
+                    timetables[index] = new Timetable
+                    {
+                        Id = index+1,
+                        GradeId = 1,
+                        TeacherId = (i == 0 ? 1 : i+2),
+                        SubjectId = i + 1,
+                        StartAt = rec,
+                        EndsAt = rec.AddMinutes(45),
+                    };
+                    rec = rec.AddMinutes(45);
+
+                    index++;
+                }
+
+                
+            }
+
+            modelBuilder.Entity<Timetable>().HasData(
+                timetables
+            );
+
+
+        }
+
+        public static DateTime ChangeTime(this DateTime dateTime, int hours, int minutes, int seconds, int milliseconds)
+        {
+            return new DateTime(
+                dateTime.Year,
+                dateTime.Month,
+                dateTime.Day,
+                hours,
+                minutes,
+                seconds,
+                milliseconds,
+                dateTime.Kind);
         }
     }
 }

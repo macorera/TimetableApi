@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace TimetableApi.Models
 {
-    public class Subject
+    public class Leave
     {
-        [Key]
+        [Required]
         public int Id { get; set; }
 
         [Required]
-        public string Title { get; set; }
-        public List<Teacher> Teachers { get; set; }
-        public List<Grade> Grades { get; set; }
+        public int TeacherId { get; set; }
+
+        [Required]
+        public DateTime From { get; set; }
+
+        [Required]
+        public DateTime To { get; set; }
     }
 }

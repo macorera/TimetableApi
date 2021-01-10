@@ -24,14 +24,14 @@ namespace TimetableApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<StudentReadDto>> GetAllGrades()
+        public ActionResult<IEnumerable<StudentReadDto>> GetAllStudents()
         {
             var students = _repository.GetAllStudents();
             return Ok(_mapper.Map<IEnumerable<StudentReadDto>>(students));
         }
 
         [HttpGet("{id}", Name = "GetStudentById")]
-        public ActionResult<StudentReadDto> GetGradeById(int id)
+        public ActionResult<StudentReadDto> GetStudentById(int id)
         {
             var student = _repository.GetStudentById(id);
             if (student != null)

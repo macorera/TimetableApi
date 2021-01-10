@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace TimetableApi.Models
 {
-    public class TeachersSubjects
+    public class GradesSubjects
     {
-        [Required]
-        public int TeacherId { get; set; }
-
-        [Required]
+        public int GradeId { get; set; }
         public int SubjectId { get; set; }
-        public Teacher Teacher { get; set; }
+        public Grade Grade { get; set; }
         public Subject Subject { get; set; }
         public DateTime CreatedAt { get; set; }
     }

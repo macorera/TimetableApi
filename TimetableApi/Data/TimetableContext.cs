@@ -22,6 +22,9 @@ namespace TimetableApi.Data
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers{ get; set; }
         public DbSet<Subject> Subjects { get; set; }
+        public DbSet<Timetable> Timetables { get; set; }
+        public DbSet<Leave> Leaves { get; set; }
         public DbSet<TeachersSubjects> TeachersSubjects { get; set; }
+        public DbSet<GradesSubjects> GradesSubjects { get; set; }
     }
 }

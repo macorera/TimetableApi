@@ -18,12 +18,12 @@ namespace TimetableApi.Data
 
         public IEnumerable<Grade> GetAllGrades()
         {
-            return _context.Grades.ToArray();
+            return _context.Grades.Include(grades => grades.Students).AsSplitQuery().Include(grades => grades.Subjects).ThenInclude(teachers => teachers.Teachers).ToArray();
         }
 
         public IEnumerable<Student> GetAllStudents()
         {
-            return _context.Students.ToArray();
+            return _context.Students.Include(student => student.Grade).ThenInclude(grade => grade.Subjects).ToArray();
         }
 
         public IEnumerable<Subject> GetAllSubjects()
@@ -38,7 +38,7 @@ namespace TimetableApi.Data
 
         public Grade GetGradeById(int id)
         {
-            return _context.Grades.FirstOrDefault(p => p.Id == id);
+            return _context.Grades.Include(grades => grades.Students).AsSplitQuery().Include(grades => grades.Subjects).ThenInclude(teachers => teachers.Teachers ).FirstOrDefault(p => p.Id == id);
         }
 
         public Student GetStudentById(int id)

@@ -17,5 +17,8 @@ namespace TimetableApi.Models
         [Required]
         public int GradeId { set; get; }
         public Grade Grade { set; get; }
+
+        public Grade Grade { set; get; }
+
     }
 }
