@@ -7,7 +7,6 @@ C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\Tim
 C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\TimetableApi.runtimeconfig.dev.json
 C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\TimetableApi.dll
 C:\Users\User\source\repos\TimetableApi\TimetableApi\bin\Debug\netcoreapp3.1\TimetableApi.pdb
-C:\Users\User\source\repos\TimetableApi\TimetableApi\obj\Debug\netcoreapp3.1\TimetableApi.csprojAssemblyReference.cache
 C:\Users\User\source\repos\TimetableApi\TimetableApi\obj\Debug\netcoreapp3.1\TimetableApi.AssemblyInfoInputs.cache
 C:\Users\User\source\repos\TimetableApi\TimetableApi\obj\Debug\netcoreapp3.1\TimetableApi.AssemblyInfo.cs
 C:\Users\User\source\repos\TimetableApi\TimetableApi\obj\Debug\netcoreapp3.1\TimetableApi.RazorTargetAssemblyInfo.cache

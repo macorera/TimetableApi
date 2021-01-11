@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
-using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+using TimetableApi.Data.Context;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 namespace TimetableApi.IntegrationTest
 {
@@ -13,7 +12,15 @@ namespace TimetableApi.IntegrationTest
         protected readonly HttpClient testClient;
         protected IntegrationTest()
         {
-            var appFactory = new WebApplicationFactory<Startup>();
+            var appFactory = new WebApplicationFactory<Startup>()
+                .WithWebHostBuilder(builder =>
+                {
+                    builder.ConfigureServices(services =>
+                    {
+                        services.RemoveAll(typeof(TimetableContext));
+                        services.AddDbContext<TimetableContext>(options => { options.UseInMemoryDatabase("TestDb"); });
+                    });
+                });
             testClient = appFactory.CreateClient();
         }
 
