@@ -7,7 +7,7 @@
 * .NET Core 3.1 on Visual Studio 2019
 * Microsoft Entity Framework Core 
 * xUnit to write the unit testing for the solution
-* Faker for Seeding realistic 
+* Faker for Seeding realistic data.
 
 
 ## Structure of the solution
