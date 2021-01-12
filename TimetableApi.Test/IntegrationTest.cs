@@ -1,15 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net.Http;
+using Microsoft.AspNetCore.Mvc.Testing;
 using TimetableApi.Data.Context;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.EntityFrameworkCore;
 
-namespace TimetableApi.IntegrationTest
+namespace TimetableApi.Test
 {
-    public class IntegrationTest
+    public class IntegrationTest 
     {
-        protected readonly HttpClient testClient;
+        /*protected readonly HttpClient testClient;
+
         protected IntegrationTest()
         {
             var appFactory = new WebApplicationFactory<Startup>()
@@ -22,8 +23,6 @@ namespace TimetableApi.IntegrationTest
                     });
                 });
             testClient = appFactory.CreateClient();
-        }
-
-        
+        }*/
     }
 }
