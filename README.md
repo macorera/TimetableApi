@@ -23,7 +23,7 @@
 ## In Future
 * Teacher and Student classes need extends from User class. Then no need of have two request types for timetable request.
 
-##Database Design
+## Database Design
 * You can find the database diagram below.
 
  ![Database Architecture Diagram](https://github.com/macorera/TimetableApi/blob/main/Diagrams/db_diagram.png?raw=true)
