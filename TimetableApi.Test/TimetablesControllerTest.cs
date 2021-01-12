@@ -7,11 +7,11 @@ using Xunit;
 namespace TimetableApi.Test
 {
     
-    public class TimetableControllerTest : IClassFixture<WebTestFixture>
+    public class TimetablesControllerTest : IClassFixture<WebTestFixture>
     {
         public HttpClient client { get; }
         
-        public TimetableControllerTest(WebTestFixture factory)
+        public TimetablesControllerTest(WebTestFixture factory)
         {
             client = factory.CreateClient();
         }
@@ -34,6 +34,17 @@ namespace TimetableApi.Test
 
             //Act
             var response = await client.GetAsync("/api/students/1");
+
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+
+        [Fact]
+        public async Task RequestTimetableForTeachers()
+        {
+            //Arrange
+
+            //Act
+            var response = await client.GetAsync("/api/teachers/1");
 
             response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
