@@ -1,6 +1,7 @@
 ﻿# TimetableApi written in .Net Core
  This is a API to manage timetables for school. This contains mainly two user levels called Teachers and Students. Teachers and Students can see their timetable. Teachers can request leave and  Need to allocate another teacher all the subjects. 
- 
+
+ ![Database Architecture Diagram](https://github.com/macorera/TimetableApi/blob/main/Diagrams/architecture.png?raw=true)
 
 
 ## Technology stack 
